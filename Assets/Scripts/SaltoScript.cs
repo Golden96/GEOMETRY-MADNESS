@@ -19,14 +19,16 @@ public class SaltoScript : MonoBehaviour {
 		var absVelY = Mathf.Abs(rigidbody2D.velocity.y);
 		if(absVelY <= .05f){
 			standing = true;
+
 		}else{
 			standing = false;
 		}
 		
-		if(  (Input.GetKeyDown("up") || Input.GetKeyDown("space")) && standing){
+		if(  (Input.GetKeyDown("up") || Input.GetKey("space")) && standing){
 			rigidbody2D.AddForce(new Vector2(0, jumpSpeed), ForceMode2D.Impulse);
-			rotate = rotate + angulo;
-			//rigidbody2D.AddTorque(-45);
+			var rotacion = angulo; //*Mathf.Round(Random.Range(1,3));
+			rotate = rotate + rotacion;
+			Debug.Log(rotacion);
 		}
 		transform.rotation = Quaternion.Lerp ( transform.rotation, Quaternion.Euler(0,0,rotate), Time.deltaTime*lSpeed);
 	}
