@@ -10,9 +10,9 @@ public class JumpRorate : MonoBehaviour {
 	void Update () {
 		
 		if (Input.GetKeyDown(KeyCode.Space)) {
-			
-			rotate = rotate + angulo;
-
+			var rotacion = angulo*Mathf.Round(Random.Range(1,3));
+			rotate = rotate + rotacion;
+			Debug.Log(rotacion);
 			
 		}
 		
