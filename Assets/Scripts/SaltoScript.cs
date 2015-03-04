@@ -18,7 +18,7 @@ public class SaltoScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		var absVelY = Mathf.Abs(rigidbody2D.velocity.y);
+		var absVelY = Mathf.Abs(GetComponent<Rigidbody2D>().velocity.y);
 		if(absVelY <= .05f){
 			standing = true;
 			
@@ -27,7 +27,7 @@ public class SaltoScript : MonoBehaviour {
 		}
 		
 		if(  (Input.GetKeyDown("up") || Input.GetKey("space")) && standing){
-			rigidbody2D.AddForce(new Vector2(0, jumpSpeed), ForceMode2D.Impulse);
+			GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpSpeed), ForceMode2D.Impulse);
 			var rnd = Mathf.Round(Random.Range(1,3));
 			//var rotacion = angulo; //*);
 			rotate = angulo*rnd;

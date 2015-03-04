@@ -11,7 +11,7 @@ public class ScrollScript : MonoBehaviour {
 
 	void Update () {
 		if(enMovimiento){
-			rigidbody2D.velocity = new Vector2(velocidad,rigidbody2D.velocity.y);  
+			GetComponent<Rigidbody2D>().velocity = new Vector2(velocidad,GetComponent<Rigidbody2D>().velocity.y);  
 		}
 	}
 }
