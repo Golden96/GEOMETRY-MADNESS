@@ -34,6 +34,12 @@ public class SaltoScript : MonoBehaviour {
 			StartCoroutine(RotateAround(-rotate,rotate_speed+rotate_speed*rnd));
 			
 		}
+
+		if (GameControl.gravedad_abajo) {
+			jumpSpeed = Mathf.Abs(jumpSpeed);
+		} else {
+			jumpSpeed = Mathf.Abs(jumpSpeed) * -1;
+		}
 	}
 	
 	IEnumerator RotateAround(float degrees, float duration){
