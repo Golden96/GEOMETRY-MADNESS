@@ -23,11 +23,11 @@ public class GameControl : MonoBehaviour {
 	}
 
 	void Update () {
-		if (Physics2D.gravity.y < 0){
-			gravedad_abajo = true;
-		} else {
-			gravedad_abajo = false;		
-		}
+		if (Physics2D.gravity.y < 0) {
+						gravedad_abajo = true;
+				} else {
+						gravedad_abajo = false;		
+				}
 	}
-
+	
 }
